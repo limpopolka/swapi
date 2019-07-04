@@ -1,0 +1,106 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+
+@media (min-width:1200px) and (max-width:2040px)
+	.btn
+		width: 200px
+		height: 50px
+		font-size: 16px
+	.wrapper-mainScreen
+		.mainScreen
+			.mainScreen-left
+				.left-content__wrapper
+					h1
+						font-size: 40px
+					p
+						font-size: 22px
+		.menu-wrapper
+			.menu-left
+				width: 80%
+				.logo
+					font-size: 16px
+				.menu
+					a
+						font-size: 16px
+			.menu-right
+				span
+					font-size: 17px
+
+
+@media (max-width: 1352px)
+	.wrapper-mainScreen
+		.mainScreen
+			.mainScreen-left
+				.left-content__wrapper
+					h1
+						font-size: 28px
+				.left-content__wrapper
+			.mainScreen-right
+				img
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.burger_wrapper
+		display: flex
+	.wrapper-mainScreen
+		.mainScreen
+			width: 100%
+			flex-direction: column-reverse
+			.mainScreen-left
+				width: 100%	
+				justify-content: center
+				padding-left: 0
+		
+				.left-content__wrapper
+					display: flex
+					flex-direction: column
+					align-items: center
+					h1
+						font-size: 28px
+						text-align: center
+					p
+						font-size: 20px
+						text-align: center
+
+				.left-content__wrapper
+			.mainScreen-right
+				width: 100%
+				justify-content: center
+				img
+					height: 150%
+					width: auto
+					margin-top: 60px
+	.menu-wrapper
+			height: 70px
+			.menu-left
+				width: 80%
+				.logo
+					font-size: 16px
+					span
+						display: block
+						margin-left: 50px
+				.menu
+					display: none
+					a
+						font-size: 15px
+			.menu-right
+				span
+					font-size: 17px
+
+// ≥992px
++media-breakpoint-down(md)
+
+// ≥768px
++media-breakpoint-down(sm)
+	.wrapper-mainScreen
+		.mainScreen
+			background: none 
+			width: 100%
+
+// ≥576px
++media-breakpoint-down(xs)
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>OptimizedHTML 4</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+	<div class="wrapper" id ='app'>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="wrapper-left col-9">
+						<div class="logo">
+							LOGO
+						</div>
+						<input v-model = 'search' type="text" class="search" placeholder="Поиск по имени">
+					</div>
+					
+					<nav class="menu col-3">
+						<a v-on:click ="chooseItem('people')" href="#">Люди</a>
+						<a v-on:click ="chooseItem('starships')" href="#">Космолеты</a>
+						<a v-on:click ="chooseItem('films')" href="#">Фильмы</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<div class="table-wrapper">
+			<div class="container">
+				<div class="row" @scroll = 'onScroll'>
+					
+					<div v-if = "checkbox === 'people'" class="list">
+
+						<div class="table-row col-12">
+							<div class="table-col">Имя</div>
+							<div class="table-col">Рост</div>
+							<div class="table-col">Пол</div>
+							<div class="table-col">Цвет волос</div>
+						</div>
+
+						<div  v-for = "item in show" class="table-row col-12">
+							<div class="table-col">{{ item.name }}</div>
+							<div class="table-col">{{ item.height }}</div>
+							<div class="table-col">{{ item.gender }}</div>
+							<div class="table-col">{{ item.hair_color }}</div>
+						</div>
+
+					</div>
+					
+					<div v-if = "checkbox === 'starships'" class="list">
+						<div  class="table-row col-12">
+							<div class="table-col">Имя</div>
+							<div class="table-col">Длина</div>
+							<div class="table-col">Модель</div>
+						</div>
+						<div  v-for = "item in show" class="table-row col-12">
+							<div class="table-col">{{ item.name }}</div>
+							<div class="table-col">{{ item.length }}</div>
+							<div class="table-col">{{ item.model }}</div>
+						</div>
+
+					</div>
+					<div v-if = "checkbox === 'films'" class="list">	
+						<div class="table-row col-12">
+							<div class="table-col">Название</div>
+							<div class="table-col">Директор</div>
+							<div class="table-col">Продюссер</div>
+						</div>
+						<div  v-for = "item in show" class="table-row col-12">
+							<div class="table-col">{{ item.title }}</div>
+							<div class="table-col">{{ item.director }}</div>
+							<div class="table-col">{{ item.producer }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
